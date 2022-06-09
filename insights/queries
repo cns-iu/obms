@@ -55,3 +55,7 @@ AS SELECT DISTINCT m.pmid,
                  ON m.pmid = c3.pmid 
           left join pmid_meshterms_qualifier c4 
                  ON m.pmid = c4.pmid; 
+
+
+select row_to_json(pmid_details)
+from pmid_details;
