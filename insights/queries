@@ -1,0 +1,34 @@
+CREATE materialized VIEW pmid_author 
+AS SELECT DISTINCT a.pmid, 
+                   Array_agg(Concat(a.fore_name, ' ', a.last_name)) AS 
+                   author_name 
+   FROM   medline_author a 
+   GROUP  BY a.pmid;
+   
+   
+CREATE materialized VIEW pmid_abstract 
+AS SELECT DISTINCT a.pmid, 
+                   Array_agg(abstract_text) AS abstract 
+   FROM   medline_abstract_text a 
+   GROUP  BY a.pmid 
+   
+   
+CREATE materialized VIEW pmid_keyword 
+AS SELECT DISTINCT a.pmid, 
+                   Array_agg(keyword) AS keywords 
+   FROM   medline_keywords a 
+   GROUP  BY a.pmid 
+   
+   
+CREATE materialized VIEW pmid_meshterms_heading 
+AS SELECT DISTINCT a.pmid, 
+                   Array_agg(descriptor_name) AS descriptor_name 
+   FROM   medline_mesh_heading a 
+   GROUP  BY a.pmid; 
+   
+   
+CREATE materialized VIEW pmid_meshterms_qualifier 
+AS SELECT DISTINCT a.pmid, 
+                   Array_agg(distinct qualifier_name) AS qualifier_name 
+   FROM   medline_mesh_qualifier a 
+   GROUP  BY a.pmid; 
