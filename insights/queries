@@ -32,3 +32,26 @@ AS SELECT DISTINCT a.pmid,
                    Array_agg(distinct qualifier_name) AS qualifier_name 
    FROM   medline_mesh_qualifier a 
    GROUP  BY a.pmid; 
+   
+   
+CREATE materialized VIEW pmid_details 
+AS SELECT DISTINCT m.pmid, 
+                   m.article_title, 
+                   m.journal_title, 
+                   m.pub_year, 
+                   c.author_name, 
+                   c1.abstract, 
+                   c2.keywords, 
+                   c3.descriptor_name, 
+                   c4.qualifier_name 
+   FROM   medline_master m 
+          left join pmid_author c 
+                 ON m.pmid = c.pmid 
+          left join pmid_abstract c1 
+                 ON m.pmid = c1.pmid 
+          left join pmid_keyword c2 
+                 ON m.pmid = c2.pmid 
+          left join pmid_meshterms_heading c3 
+                 ON m.pmid = c3.pmid 
+          left join pmid_meshterms_qualifier c4 
+                 ON m.pmid = c4.pmid; 
