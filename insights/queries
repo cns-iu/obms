@@ -59,3 +59,6 @@ AS SELECT DISTINCT m.pmid,
 
 select row_to_json(pmid_details)
 from pmid_details;
+
+
+create materialized view pmid_journal as select distinct issn, journal_title from medline_master ;
