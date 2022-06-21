@@ -8,6 +8,14 @@ select count (distinct pmid ) from medline_master;
  34190613
 
 
+-- Publications of only journal article type and has mesh terms
+select count(distinct m.pmid) from medline_master m  join (select distinct pmid from  medline_publicationtype p where publicationtype = 'Journal Article')p on m.pmid = p.pmid  join medline_mesh_heading h on m.pmid = h.pmid 
+
+  count   
+----------
+ 27395790
+(1 row)
+
 -- TOTAL NUMBER OF AUTHORS
 
 select count(distinct (concat( a.fore_name , ' ',a.last_name))) as author_name from medline_author a ;
@@ -46,4 +54,37 @@ select count(distinct( keyword) ) from medline_keywords;
   count  
 ---------
  5621799
+(1 row)
+
+-- NUMBER OF DISTINCT ISSN 's
+
+select count(distinct issn) from medline_master;
+  count  
+---------
+ 35780
+(1 row)
+
+-- NUMBER OF PUBLICATIONS WHO DON’T HAVE ISSN's
+
+select count(*) from medline_master where issn is null; (OF THESE AROUND 390000 are journal article publication types)
+ count  
+--------
+ 401690
+(1 row)
+
+
+-- NUMBER OF DISTINCT journal_nlmuniqueid
+
+select count(distinct journal_nlmuniqueid) from medline_master;
+ count 
+-------
+ 35183
+(1 row)
+
+--  NUMBER OF DISTINCT journal_nlmuniqueid of journal article type and has mesh terms
+select count(distinct m.journal_nlmuniqueid) from medline_master m  join (select distinct pmid from  medline_publicationtype p where publicationtype = 'Journal Article')p on m.pmid = p.pmid  join medline_mesh_heading h on m.pmid = h.pmid  ;
+
+ count 
+-------
+ 22313
 (1 row)
