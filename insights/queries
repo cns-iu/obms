@@ -63,9 +63,16 @@ from pmid_details;
 
 create materialized view pmid_journal as select distinct journal_nlmuniqueid, journal_title from medline_master ;
 
-
 create materialized view journal_stats as (select journal_nlmuniqueid, count(distinct m.pmid) as count_publications, count(distinct descriptor_name) as count_meshterm from medline_master m join medlinex_rascore_nodes a on a.pmid = m.pmid join medline_mesh_heading b on b.pmid = m.pmid group by journal_nlmuniqueid );
 
 create materialized view meshterm_stats as (select descriptor_name, count(distinct m.pmid) as count_publications, count(distinct journal_nlmuniqueid) as count_journals from medline_master m join medlinex_rascore_nodes a on a.pmid = m.pmid join medline_mesh_heading b on b.pmid = m.pmid group by descriptor_name ); 
 
+
+-- VIEWS FOR FINDING JOURNAL TO JOURNAL RELATION BASED ON MESH TERMS COUNTS
 create materialized view journal_pmid as select distinct journal_nlmuniqueid, descriptor_name from medline_master m join medlinex_rascore_nodes n on m.pmid = n.pmid join medline_mesh_heading h on h.pmid = m.pmid;
+create materialized view journal_pmid_agg as select distinct journal_nlmuniqueid, array_agg( distinct descriptor_name) from journal_pmid group by journal_nlmuniqueid;
+create materialized view journal_journal_agg as select distinct a.journal_nlmuniqueid as journal1,b.journal_nlmuniqueid as journal2,a.array_agg as descriptor_name1,b.array_agg as descriptor_name2 from journal_pmid_agg a join journal_pmid_agg b on a.journal_nlmuniqueid <> b.journal_nlmuniqueid ;
+create materialized view journal_mesh_relation as (select journal1, journal2, count(distinct descriptor_name) as common_meshtermscount from (select journal1,journal2,unnest(descriptor_name1) as descriptor_name from journal_journal_agg_id intersect select journal1,journal2,unnest(descriptor_name2) as descriptor_name from journal_journal_agg_id) a group by journal1,journal2);
+
+create materialized view journal_stats as (select journal_nlmuniqueid, count(distinct m.pmid) as count_publications, count(distinct descriptor_name) as count_meshterm from medline_master m join medlinex_rascore_nodes a on a.pmid = m.pmid join medline_mesh_heading b on b.pmid = m.pmid group by journal_nlmuniqueid );
+create materialized view journal_mesh_relation_percentage as select a.journal1,a.journal2,common_meshtermscount/(b.count_meshterm+c.count_meshterm-common_meshtermscount)::float as percentage_common_meshtermscount from journal_mesh_relation a join journal_stats b on a.journal1=b.journal_nlmuniqueid join journal_stats c on a.journal2=c.journal_nlmuniqueid ;
