@@ -76,3 +76,8 @@ create materialized view journal_mesh_relation as (select journal1, journal2, co
 
 create materialized view journal_stats as (select journal_nlmuniqueid, count(distinct m.pmid) as count_publications, count(distinct descriptor_name) as count_meshterm from medline_master m join medlinex_rascore_nodes a on a.pmid = m.pmid join medline_mesh_heading b on b.pmid = m.pmid group by journal_nlmuniqueid );
 create materialized view journal_mesh_relation_percentage as select a.journal1,a.journal2,common_meshtermscount/(b.count_meshterm+c.count_meshterm-common_meshtermscount)::float as percentage_common_meshtermscount from journal_mesh_relation a join journal_stats b on a.journal1=b.journal_nlmuniqueid join journal_stats c on a.journal2=c.journal_nlmuniqueid ;
+
+
+-- Materialized view for journal to journal relation
+
+create materialized view journal_journal_relation as select a.journal_nlmuniqueid as journal1,a.iso_abbrev as journal_name1, b.journal_nlmuniqueid as journal2,b.iso_abbrev as journal_name2,(avg(rascore::integer))::integer as rascore_avg, count(distinct b.pmid ) as count_repeatingjournals from medlinex_rascore_edges m join medline_master a on a.pmid=m.pmid join medline_master b on b.pmid = m.pmid2 group by a.journal_nlmuniqueid, b.journal_nlmuniqueid,a.iso_abbrev,b.iso_abbrev; 
