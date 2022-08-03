@@ -1,7 +1,6 @@
 WITH edges AS (
 	  SELECT journal1 as source, journal2 as target,
-	    -- normalize the proximity to 1 - 1,0000 (1,000 being the highest)
-	
+	    
 	       (rascore_avg*count_repeatingjournals)
 	as weight
 	  FROM journal_journal_relation
