@@ -81,3 +81,12 @@ create materialized view journal_mesh_relation_percentage as select a.journal1,a
 -- Materialized view for journal to journal relation
 
 create materialized view journal_journal_relation as select a.journal_nlmuniqueid as journal1,a.iso_abbrev as journal_name1, b.journal_nlmuniqueid as journal2,b.iso_abbrev as journal_name2,(avg(rascore::integer))::integer as rascore_avg, count(distinct b.pmid ) as count_repeatingjournals from medlinex_rascore_edges m join medline_master a on a.pmid=m.pmid join medline_master b on b.pmid = m.pmid2 group by a.journal_nlmuniqueid, b.journal_nlmuniqueid,a.iso_abbrev,b.iso_abbrev; 
+create materialized view journal_journal_top50 as (select * from (SELECT journal1                                                    AS source,                                                                            
+       journal2                                                    AS target, 
+       ( rascore_avg * count_repeatingjournals )                   AS weight,journal_name1,journal_name2, 
+       Rank() 
+         OVER (                  
+           partition BY journal1 
+           ORDER BY ( rascore_avg * count_repeatingjournals )DESC) rank 
+FROM   journal_journal_relation ) a where rank <=50
+);
