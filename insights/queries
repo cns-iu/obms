@@ -90,3 +90,45 @@ create materialized view journal_journal_top50 as (select * from (SELECT journal
            ORDER BY ( rascore_avg * count_repeatingjournals )DESC) rank 
 FROM   journal_journal_relation ) a where rank <=50
 );
+
+
+
+
+create materialized view journal_journal_top50 as (select * from (SELECT journal1                                                    AS source,                                                                            
+       journal2                                                    AS target, 
+       ( rascore_avg * count_repeatingjournals )                   AS weight,journal_name1,journal_name2, 
+       Rank() 
+         OVER (                  
+           partition BY journal1 
+           ORDER BY ( rascore_avg * count_repeatingjournals )DESC) rank 
+FROM   journal_journal_relation ) a where rank <=50
+);
+create materialized view edges as select source,target,weight from journal_journal_top50;
+
+create materialized view nodes as SELECT source      AS id, 
+       journal_name1 AS label 
+FROM   journal_journal_top50 
+UNION 
+SELECT target, 
+       journal_name2 
+FROM   journal_journal_top50;
+
+
+create materialized view json_journal_relation as SELECT Jsonb_pretty(Jsonb_object_agg(field, val)) 
+FROM   ((SELECT 'nodes' 
+                       AS 
+                        field, 
+                Jsonb_agg(Jsonb_strip_nulls(Jsonb_build_object('id', id, 'label' 
+                                            , label 
+                                            ) 
+                          )) AS 
+                val 
+         FROM   nodes) 
+        UNION ALL 
+        (SELECT 'edges'                                                   AS 
+                field, 
+                Jsonb_agg(Jsonb_strip_nulls(Jsonb_build_object('source', source, 
+                                            'target', 
+                                            target, 
+                                                      'weight', weight))) AS val 
+         FROM   edges)) AS a;
