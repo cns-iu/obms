@@ -1,16 +1,13 @@
-create materialized view edges as select source,target,weight from journal_journal_top50;
-
-create materialized view nodes as SELECT source      AS id, 
+with edges as (select source,target,weight from journal_journal_top50), 
+nodes as (SELECT source      AS id, 
        journal_name1 AS label 
 FROM   journal_journal_top50 
 UNION 
 SELECT target, 
        journal_name2 
-FROM   journal_journal_top50;
+FROM   journal_journal_top50)
 
-
-CREATE materialized VIEW json_journal_relation 
-AS SELECT Jsonb_pretty(Jsonb_object_agg(field, val)) 
+SELECT Jsonb_pretty(Jsonb_object_agg(field, val)) 
    FROM   ((SELECT 'nodes' 
                           AS 
                            field, 
@@ -31,3 +28,4 @@ AS SELECT Jsonb_pretty(Jsonb_object_agg(field, val))
                                                          'weight', weight))) AS 
                    val 
             FROM   edges)) AS a; 
+            
