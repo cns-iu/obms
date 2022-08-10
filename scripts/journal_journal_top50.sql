@@ -1,4 +1,5 @@
-CREATE materialized VIEW journal_journal_top50 
+DROP MATERIALIZED VIEW IF EXISTS journal_journal_top50;
+CREATE MATERIALIZED VIEW journal_journal_top50 
 AS (SELECT journal1 AS source, 
            journal2 AS target, 
            weight, 
