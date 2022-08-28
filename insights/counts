@@ -86,5 +86,6 @@ select count(distinct m.journal_nlmuniqueid) from medline_master m  join (selec
 
  count 
 -------
+
  22313
 (1 row)
