@@ -1,0 +1,4 @@
+[
+  {"id": "SciMap-journal-mesh-all", "name": "SciMap-journal-mesh-all", "dir": "assets/datasets/SciMap-journal-mesh-all"}
+, {"id": "SciMap-journal-mesh-degree1to1000-lay3-undir-mstpath-force", "name": "SciMap-journal-mesh-degree1to1000-lay3-undir-mstpath-force", "dir": "assets/datasets/SciMap-journal-mesh-degree1to1000-lay3-undir-mstpath-force"}
+]

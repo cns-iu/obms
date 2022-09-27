@@ -1,0 +1,7 @@
+Original Network: Loading time, 0.08617455700004939
+Original Network: Max Degree, 437 
+Original Network: # Nodes, 15033 
+Original Network: # Edges, 14984
+Largest Component: Computing time, 0.18684720500095864
+Largest Component: # Nodes, 14982 
+Largest Component: # Edges, 14981
