@@ -17,3 +17,4 @@ done
 
 time ./src/map4sci.sh $dataset ./scripts/51x-build-all-dataset-maps.sh 
 time ./src/map4sci.sh $dataset ./scripts/90-generate-site.sh
+cp --no-preserve=ownership -r site/* ../docs
