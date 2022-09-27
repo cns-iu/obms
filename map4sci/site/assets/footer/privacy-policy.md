@@ -1,1 +1,0 @@
-[Privacy policy text here]
