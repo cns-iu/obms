@@ -10,7 +10,7 @@ do
   echo $dataset
   if [ ! -e $OUT/map4sci-completed ]
   then
-    time ./src/map4sci.sh $dataset | tee $OUT/map4sci.log.txt
+    time ./src/map4sci.sh $dataset &> $OUT/map4sci.log.txt
     touch $OUT/map4sci-completed
   fi
 done
