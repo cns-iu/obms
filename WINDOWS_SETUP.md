@@ -1,9 +1,9 @@
 # map4sci Windows Setup
 
-## Steps
+## WSL2 + Ubuntu Setup
 
-1. Install WSL2 and Ubuntu distribution: [tutorial](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)
-2. Install docker in Ubuntu: [tutorial](https://docs.docker.com/engine/install/ubuntu/)
+1. Install WSL2 and the Ubuntu distribution: [tutorial](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)
+2. Install Docker in Ubuntu: [tutorial](https://docs.docker.com/engine/install/ubuntu/)
 3. Add your user to docker group in Ubuntu terminal:
    `sudo gpasswd -a $USER docker`
 4. Restart WSL from powershell:
