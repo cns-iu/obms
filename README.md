@@ -1,1 +1,1 @@
-# map4sci-data-test
+# Open Biomedical Map of Science (OBMS)
