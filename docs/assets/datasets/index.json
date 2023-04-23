@@ -1,5 +1,27 @@
 [
-  {"id": "OBMC_v2_allJallM_tfidf25", "name": "OBMC_v2_allJallM_tfidf25", "dir": "assets/datasets/OBMC_v2_allJallM_tfidf25"},
-  {"id": "SciMap-journal-mesh-degree1to1000-lay3-undir-mstpath-force", "name": "SciMap-journal-mesh-degree1to1000-lay3-undir-mstpath-force", "dir": "assets/datasets/SciMap-journal-mesh-degree1to1000-lay3-undir-mstpath-force"},
-  {"id": "SciMap-journal-mesh-all", "name": "SciMap-journal-mesh-all", "dir": "assets/datasets/SciMap-journal-mesh-all"}
+  {
+    "id": "OBMC_v3_MeSHTopJour25_tfidf_a_BatchTree",
+    "name": "OBMC_v3_MeSHTopJour25_tfidf_a_BatchTree",
+    "dir": "assets/datasets/OBMC_v3_MeSHTopJour25_tfidf_a_BatchTree"
+  },
+  {
+    "id": "OBMC_v3_MeSHTopJour25_tfidf_b_DELG",
+    "name": "OBMC_v3_MeSHTopJour25_tfidf_b_DELG",
+    "dir": "assets/datasets/OBMC_v3_MeSHTopJour25_tfidf_b_DELG"
+  },
+  {
+    "id": "OBMC_v2_allJallM_tfidf25",
+    "name": "OBMC_v2_allJallM_tfidf25",
+    "dir": "assets/datasets/OBMC_v2_allJallM_tfidf25"
+  },
+  {
+    "id": "SciMap-journal-mesh-degree1to1000-lay3-undir-mstpath-force",
+    "name": "SciMap-journal-mesh-degree1to1000-lay3-undir-mstpath-force",
+    "dir": "assets/datasets/SciMap-journal-mesh-degree1to1000-lay3-undir-mstpath-force"
+  },
+  {
+    "id": "SciMap-journal-mesh-all",
+    "name": "SciMap-journal-mesh-all",
+    "dir": "assets/datasets/SciMap-journal-mesh-all"
+  }
 ]
