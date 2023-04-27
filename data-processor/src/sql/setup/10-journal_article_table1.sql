@@ -1,6 +1,6 @@
 -- View: public.journal_article_table1
 
-DROP MATERIALIZED VIEW public.journal_article_table1;
+DROP MATERIALIZED VIEW IF EXISTS public.journal_article_table1 CASCADE;
 
 CREATE MATERIALIZED VIEW public.journal_article_table1
 TABLESPACE pg_default
@@ -12,6 +12,9 @@ AS
   WHERE m.pub_year::integer >= 2013 AND m.pub_year::integer <= 2022
 WITH DATA;
 
-\copy (SELECT * FROM journal_article_table1) to 'C:\Users\aishw\obms\data_extraction\output\journal_article_table1.csv' with csv header;
 ALTER TABLE public.journal_article_table1
     OWNER TO avsinhas;
+
+GRANT ALL ON TABLE public.journal_article_count_all_meshterms TO avsinhas;
+GRANT SELECT ON TABLE public.journal_article_count_all_meshterms TO mginda;
+GRANT SELECT ON TABLE public.journal_article_count_all_meshterms TO yokong;

@@ -1,5 +1,7 @@
 #!/bin/bash
 source constants.sh
 set -ev
-
-time psql -f src/sql/data_extraction.sql
+for sql in src/sql/export/*.sql; do
+    echo $(basename $sql)
+    time psql -f $sql
+done
