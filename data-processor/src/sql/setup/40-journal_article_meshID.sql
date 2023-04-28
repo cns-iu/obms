@@ -22,7 +22,9 @@ GRANT ALL ON TABLE public."journal_article_meshID" TO avsinhas;
 GRANT ALL ON TABLE public."journal_article_meshID" TO mginda;
 
 -- This View is created using medline_mesh_heading_msh table which contains fields such as: 
--- pmid : artcile id, heading_ctr : heading of the article
+-- pmid : article id, heading_ctr : heading of the article
 -- ui : mesh term id, descriptor_type : type of mesh term
 -- descriptor_name : name of the mesh term.  
+-- We are excluding some of the mesh terms which are not related to the biomedical data. 
+-- These mesh terms are present in the table obms_mesh_terms_exclude.
 

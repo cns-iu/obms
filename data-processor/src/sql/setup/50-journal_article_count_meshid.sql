@@ -19,3 +19,7 @@ ALTER TABLE public.journal_article_count_meshid
 GRANT ALL ON TABLE public.journal_article_count_meshid TO bherr;
 GRANT ALL ON TABLE public.journal_article_count_meshid TO avsinhas;
 GRANT ALL ON TABLE public.journal_article_count_meshid TO mginda;
+
+-- This is the pivot table which generates count of articles for journal and mesh term. We are using view journal_article_meshID 
+-- which contains journal id, article id and mesh terms data. 
+-- This view excludes mesh terms that are not related to biomedical data.

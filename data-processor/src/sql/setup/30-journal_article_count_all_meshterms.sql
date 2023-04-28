@@ -16,4 +16,7 @@ ALTER TABLE public.journal_article_count_all_meshterms
 
 GRANT ALL ON TABLE public.journal_article_count_all_meshterms TO avsinhas;
 GRANT SELECT ON TABLE public.journal_article_count_all_meshterms TO mginda;
+GRANT SELECT ON TABLE public.journal_article_count_all_meshterms TO bherr;
 GRANT SELECT ON TABLE public.journal_article_count_all_meshterms TO yokong;
+
+-- This table generated journal_id, journal_title and count of articles published in that journal. 
