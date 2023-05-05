@@ -22,8 +22,8 @@ do
   fi
   if [ ! -e $OUT/config.sh ]
   then
-    cat src/config-template.sh | perl -pe "s/--DATASET--/${dataset}/g" > $OUT/config.sh
-    cat $OUT/config.sh | perl -pe 's/BatchTree/DELG/g' > $OUT2/config.sh
-    cat $OUT/config.sh | perl -pe 's/BatchTree/CG/g' > $OUT3/config.sh
+    cat src/config-template.sh | perl -pe "s/--DATASET--/${dataset}_BatchTree/g" > $OUT/config.sh
+    cat src/config-template.sh | perl -pe "s/--DATASET--/${dataset}_DELG/g;s/BatchTree/DELG/g" > $OUT2/config.sh
+    cat src/config-template.sh | perl -pe "s/--DATASET--/${dataset}_CG/g;s/BatchTree/CG/g" > $OUT3/config.sh
   fi
 done

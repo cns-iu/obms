@@ -41,9 +41,9 @@ timer.start('Original Network: Loading time')
 G = nx.Graph()
 
 for row in read_csv(NODES):
-  G.add_node(row['uid'], label=row['label'], weight=int(row['article_ct']))
+  G.add_node(int(row['uid'])+1, label=row['label'], weight=int(row['article_ct']))
 
-edges = [ ( row['source'], row['target'], float(row['tf_idf']) ) for row in read_csv(EDGES) ]
+edges = [ ( int(row['source'])+1, int(row['target'])+1, float(row['tf_idf']) ) for row in read_csv(EDGES) ]
 max_weight = max( row[2] for row in edges )
 for (source, target, weight) in edges:
   G.add_edge(source, target, weight=(weight / max_weight * 1000))
@@ -65,7 +65,8 @@ print('Original Network: Max Degree,', max_degree, '\nOriginal Network: # Nodes,
 
 timer.start('Largest Component: Computing time')
 G = G.subgraph(max(nx.connected_components(G), key=len)).copy()
-H = convert_node_labels_to_integers(G, 1, 'decreasing degree', 'src_id')
+#H = convert_node_labels_to_integers(G, 1, 'decreasing degree', 'src_id')
+H = G
 timer.stop('Largest Component: Computing time')
 
 print('Largest Component: # Nodes,', H.number_of_nodes(), '\nLargest Component: # Edges,', H.number_of_edges())
