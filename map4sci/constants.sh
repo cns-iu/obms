@@ -1,6 +1,8 @@
 shopt -s expand_aliases
 
-export CURRENT_VERSION=v1
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+export CURRENT_VERSION=v4
 
 # Load environment
 if [ -e env.sh ]; then

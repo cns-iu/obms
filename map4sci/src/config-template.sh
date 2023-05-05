@@ -3,7 +3,8 @@
 
 DATASET=--DATASET--
 NETWORK="datasets/${DATASET}/network.dot"
-SKIP_MEASURES=true
+SKIP_MEASURES=false
+LAYOUT=BatchTree
 
 # Algorithm configuration
 # -----------------------

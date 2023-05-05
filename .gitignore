@@ -135,3 +135,7 @@ dmypy.json
 
 /data-processor/output
 
+/map4sci/scratch
+/map4sci/*.sif
+/map4sci/datasets
+/map4sci/raw-data
