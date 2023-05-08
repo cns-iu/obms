@@ -15,11 +15,6 @@
     "dir": "assets/datasets/OBMS_v3_combined_tfidf10_BatchTree"
   },
   {
-    "id": "OBMS_v3_combined_tfidf10_DELG",
-    "name": "OBMS_v3_combined_tfidf10_DELG",
-    "dir": "assets/datasets/OBMS_v3_combined_tfidf10_DELG"
-  },
-  {
     "id": "OBMS_v3_combined_tfidf25_BatchTree",
     "name": "OBMS_v3_combined_tfidf25_BatchTree",
     "dir": "assets/datasets/OBMS_v3_combined_tfidf25_BatchTree"
