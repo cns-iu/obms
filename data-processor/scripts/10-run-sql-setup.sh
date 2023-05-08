@@ -2,8 +2,7 @@
 source constants.sh
 set -ev
 
-for sql in src/sql/setup/*.sql; then
+for sql in src/sql/setup/*.sql; do
     echo $(basename $sql)
     time psql -f $sql
-fi
-
+done

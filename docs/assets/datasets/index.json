@@ -1,5 +1,30 @@
 [
   {
+    "id": "OBMS_v3_combined_tfidf100_BatchTree",
+    "name": "OBMS_v3_combined_tfidf100_BatchTree",
+    "dir": "assets/datasets/OBMS_v3_combined_tfidf100_BatchTree"
+  },
+  {
+    "id": "OBMS_v3_combined_tfidf100_DELG",
+    "name": "OBMS_v3_combined_tfidf100_DELG",
+    "dir": "assets/datasets/OBMS_v3_combined_tfidf100_DELG"
+  },
+  {
+    "id": "OBMS_v3_combined_tfidf10_BatchTree",
+    "name": "OBMS_v3_combined_tfidf10_BatchTree",
+    "dir": "assets/datasets/OBMS_v3_combined_tfidf10_BatchTree"
+  },
+  {
+    "id": "OBMS_v3_combined_tfidf25_BatchTree",
+    "name": "OBMS_v3_combined_tfidf25_BatchTree",
+    "dir": "assets/datasets/OBMS_v3_combined_tfidf25_BatchTree"
+  },
+  {
+    "id": "OBMS_v3_combined_tfidf50_BatchTree",
+    "name": "OBMS_v3_combined_tfidf50_BatchTree",
+    "dir": "assets/datasets/OBMS_v3_combined_tfidf50_BatchTree"
+  },
+  {
     "id": "OBMC_v3_MeSHTopJour25_tfidf_a_BatchTree",
     "name": "OBMC_v3_MeSHTopJour25_tfidf_a_BatchTree",
     "dir": "assets/datasets/OBMC_v3_MeSHTopJour25_tfidf_a_BatchTree"
