@@ -35,6 +35,11 @@
     "dir": "assets/datasets/OBMS_v3_combined_tfidf50_BatchTree"
   },
   {
+    "id": "OBMS_v3_combined_tfidf50_DELG",
+    "name": "OBMS_v3_combined_tfidf50_DELG",
+    "dir": "assets/datasets/OBMS_v3_combined_tfidf50_DELG"
+  },
+  {
     "id": "OBMC_v3_MeSHTopJour25_tfidf_a_BatchTree",
     "name": "OBMC_v3_MeSHTopJour25_tfidf_a_BatchTree",
     "dir": "assets/datasets/OBMC_v3_MeSHTopJour25_tfidf_a_BatchTree"
