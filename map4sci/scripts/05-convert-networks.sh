@@ -13,8 +13,8 @@ do
   mkdir -p $OUT $OUT2 # $OUT3
 
   V=$(echo $network | cut -d '_' -f 2)
-  if [ "${V}" == "v4" ]; then
-    NODES=./input-data/OBMS_v4_filtered_tfidf_nodeList.csv.gz
+  if [ "${V}" == "v4.1" ]; then
+    NODES=./input-data/OBMS_v4.1_filtered_tfidf_nodeList.csv.gz
   elif [ "${V}" == "v3" ]; then
     NODES=./input-data/OBMS_v3_allJallM_tfidf_nodeList.csv.gz
   fi
