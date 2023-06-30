@@ -1,5 +1,25 @@
 [
   {
+    "id": "OBMS_v4.1_filtered_tfidf10_BatchTree",
+    "name": "OBMS_v4.1_filtered_tfidf10_BatchTree",
+    "dir": "assets/datasets/OBMS_v4.1_filtered_tfidf10_BatchTree"
+  },
+  {
+    "id": "OBMS_v4.1_filtered_tfidf25_BatchTree",
+    "name": "OBMS_v4.1_filtered_tfidf25_BatchTree",
+    "dir": "assets/datasets/OBMS_v4.1_filtered_tfidf25_BatchTree"
+  },
+  {
+    "id": "OBMS_v4.1_filtered_tfidf50_BatchTree",
+    "name": "OBMS_v4.1_filtered_tfidf50_BatchTree",
+    "dir": "assets/datasets/OBMS_v4.1_filtered_tfidf50_BatchTree"
+  },
+  {
+    "id": "OBMS_v4.1_filtered_tfidf100_BatchTree",
+    "name": "OBMS_v4.1_filtered_tfidf100_BatchTree",
+    "dir": "assets/datasets/OBMS_v4.1_filtered_tfidf100_BatchTree"
+  },
+  {
     "id": "OBMS_v3_combined_tfidf100_BatchTree",
     "name": "OBMS_v3_combined_tfidf100_BatchTree",
     "dir": "assets/datasets/OBMS_v3_combined_tfidf100_BatchTree"
@@ -63,25 +83,5 @@
     "id": "SciMap-journal-mesh-all",
     "name": "SciMap-journal-mesh-all",
     "dir": "assets/datasets/SciMap-journal-mesh-all"
-  },
-  {
-    "id": "OBMS_v4.1_filtered_tfidf10_BatchTree",
-    "name": "OBMS_v4.1_filtered_tfidf10_BatchTree",
-    "dir": "assets/datasets/OBMS_v4.1_filtered_tfidf10_BatchTree"
-  },
-  {
-    "id": "OBMS_v4.1_filtered_tfidf25_BatchTree",
-    "name": "OBMS_v4.1_filtered_tfidf25_BatchTree",
-    "dir": "assets/datasets/OBMS_v4.1_filtered_tfidf25_BatchTree"
-  },
-  {
-    "id": "OBMS_v4.1_filtered_tfidf50_BatchTree",
-    "name": "OBMS_v4.1_filtered_tfidf50_BatchTree",
-    "dir": "assets/datasets/OBMS_v4.1_filtered_tfidf50_BatchTree"
-  },
-  {
-    "id": "OBMS_v4.1_filtered_tfidf100_BatchTree",
-    "name": "OBMS_v4.1_filtered_tfidf100_BatchTree",
-    "dir": "assets/datasets/OBMS_v4.1_filtered_tfidf100_BatchTree"
   }
 ]
