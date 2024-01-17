@@ -9,9 +9,11 @@ This project designs, implements, and deploys efficient algorithms for multi-lev
 
 ### Publications
 
-- Börner, Katy and Bueckle, Andreas and Ginda, Michael "Data visualization literacy: Definitions, conceptual frameworks, exercises, and assessments" Proceedings of the National Academy of Sciences , v.116 , 2019 10.1073/pnas.1807180116 Citation Details
+- <https://www.frontiersin.org/articles/10.3389/frma.2023.1274793/full>
 
-- Börner, Katy and Scrivner, Olga and Gallant, Mike and Ma, Shutian and Liu, Xiaozhong and Chewning, Keith and Wu, Lingfei and Evans, James A. "Skill discrepancies between research, education, and jobs reveal the critical need to supply soft skills for the data economy" Proceedings of the National Academy of Sciences , v.115 , 2018 10.1073/pnas.1804247115 Citation Details  
+- Börner, Katy and Bueckle, Andreas and Ginda, Michael "Data visualization literacy: Definitions, conceptual frameworks, exercises, and assessments" Proceedings of the National Academy of Sciences , v.116 , 2019 10.1073/pnas.1807180116
+
+- Börner, Katy and Scrivner, Olga and Gallant, Mike and Ma, Shutian and Liu, Xiaozhong and Chewning, Keith and Wu, Lingfei and Evans, James A. "Skill discrepancies between research, education, and jobs reveal the critical need to supply soft skills for the data economy" Proceedings of the National Academy of Sciences , v.115 , 2018 10.1073/pnas.1804247115 
 
 - Saket, Bahador, Carlos Scheidegger, Stephen Kobourov, and Katy Börner. 2015. "Map-Based Visualizations Increase Recall Accuracy of Data". EUROGRAPHICS 2015, Zürich, Switzerland 441-450.
 
